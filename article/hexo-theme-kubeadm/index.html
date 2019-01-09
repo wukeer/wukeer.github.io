@@ -227,7 +227,7 @@
 </ul>
 <p>从官方下载发行版的二进制包，手动部署每个组件，组成Kubernetes集群。目前企业生产环境中主要使用该方式。<br>
 下载地址：<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#v1113" target="_blank" rel="noopener">https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#v1113</a></p>
-<h2 id="1-安装要求">1. 安装要求</h2>
+<h2 id="安装要求">安装要求</h2>
 <pre><code>操作系统
 Ubuntu 16.04+
 Debian 9
@@ -243,7 +243,7 @@ Fedora 25/26 (best-effort)
 检查product_uuid：cat /sys/class/dmi/id/product_uuid
 禁止swap分区。这样才能使kubelet正常工作
 </code></pre>
-<h2 id="2-准备环境">2. 准备环境</h2>
+<h2 id="准备环境">准备环境</h2>
 <pre><code>关闭防火墙：
 
     # systemctl stop firewalld
@@ -271,7 +271,7 @@ Fedora 25/26 (best-effort)
     # yum install ntpdate -y
     # ntpdate  ntp.api.bz
 </code></pre>
-<h2 id="3-安装docker">3. 安装Docker</h2>
+<h2 id="安装docker">安装Docker</h2>
 <pre><code># yum install -y yum-utils device-mapper-persistent-data lvm2 
 
 # yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -283,7 +283,7 @@ Fedora 25/26 (best-effort)
 # yum localinstall https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-selinux-17.03.3.ce-1.el7.noarch.rpm
 </code></pre>
 <p><strong>假如docker启动的时候报错：graphdriver: driver not supported</strong>：升级系统内核</p>
-<h2 id="4-安装kubeadmkubelet和kubectl">4. 安装kubeadm，kubelet和kubectl</h2>
+<h2 id="安装kubeadmkubelet和kubectl">安装kubeadm，kubelet和kubectl</h2>
 <p>kubeadm： 引导集群的命令</p>
 <p>kubelet：集群中运行任务的代理程序</p>
 <p>kubectl：命令行管理工具</p>
@@ -308,7 +308,7 @@ KUBELET_KUBEADM_ARGS=--cgroup-driver=cgroupfs --cni-bin-dir=/opt/cni/bin --cni-c
 # systemctl daemon-reload
 # systemctl restart kubelet
 </code></pre>
-<h2 id="5-使用kubeadm创建单个master集群">5. 使用kubeadm创建单个Master集群</h2>
+<h2 id="使用kubeadm创建单个master集群">使用kubeadm创建单个Master集群</h2>
 <p>5.1 默认下载镜像地址在国外无法访问，先从准备好所需镜像<br>
 保存到脚本之间运行：</p>
 <pre><code>K8S_VERSION=v1.11.2
@@ -369,7 +369,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 <pre><code># kubeadm join 192.168.0.11:6443 --token 6hk68y.0rdz1wdjyh85ntkr --discovery-token-ca-cert-hash sha256:d1d3f59ae37fbd632707cbeb9b095d0d0b19af535078091993c4bc4d9d2a7782
 </code></pre>
 <p>格式：kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash></hash></master-port></master-ip></token></p>
-<h2 id="6-kubernetes-dashboard">6. kubernetes dashboard</h2>
+<h2 id="kubernetes-dashboard">kubernetes dashboard</h2>
 <p>先将yaml文件下载下来，修改里面镜像地址和Service NodePort类型。</p>
 <pre><code># wget https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 </code></pre>
@@ -464,7 +464,7 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2V
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#官方提供kubernetes部署3种方式"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5B98;&#x65B9;&#x63D0;&#x4F9B;Kubernetes&#x90E8;&#x7F72;3&#x79CD;&#x65B9;&#x5F0F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-安装要求"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">1. &#x5B89;&#x88C5;&#x8981;&#x6C42;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-准备环境"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">2. &#x51C6;&#x5907;&#x73AF;&#x5883;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-安装docker"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">3. &#x5B89;&#x88C5;Docker</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-安装kubeadmkubelet和kubectl"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">4. &#x5B89;&#x88C5;kubeadm&#xFF0C;kubelet&#x548C;kubectl</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-使用kubeadm创建单个master集群"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">5. &#x4F7F;&#x7528;kubeadm&#x521B;&#x5EFA;&#x5355;&#x4E2A;Master&#x96C6;&#x7FA4;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-kubernetes-dashboard"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">6. kubernetes dashboard</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#官方提供kubernetes部署3种方式"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5B98;&#x65B9;&#x63D0;&#x4F9B;Kubernetes&#x90E8;&#x7F72;3&#x79CD;&#x65B9;&#x5F0F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装要求"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;&#x8981;&#x6C42;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#准备环境"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x51C6;&#x5907;&#x73AF;&#x5883;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装docker"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;Docker</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装kubeadmkubelet和kubectl"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;kubeadm&#xFF0C;kubelet&#x548C;kubectl</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用kubeadm创建单个master集群"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">&#x4F7F;&#x7528;kubeadm&#x521B;&#x5EFA;&#x5355;&#x4E2A;Master&#x96C6;&#x7FA4;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#kubernetes-dashboard"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">kubernetes dashboard</span></a></li></ol>
         
         </div>
       </aside>
