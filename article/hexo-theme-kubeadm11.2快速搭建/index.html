@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://www.huweihuang.com/article/hexo-theme-huweihuang/">
+    <link rel="canonical" href="http://www.huweihuang.com/article/hexo-theme-kubeadm11.2快速搭建/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -210,59 +210,216 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <blockquote>
-<p>This HuWeihuang theme created by <a href="http://www.huweihuang.com/">HuWeihuang</a> modified from the original Porter <a href="https://github.com/YenYuHsuan/hexo-theme-beantech" target="_blank" rel="noopener">YuHsuan</a></p>
-</blockquote>
-<h1 id="live-demo">Live Demo</h1>
-<p>Hu Weihuang Blog : <a href="http://www.huweihuang.com/">www.huweihuang.com</a></p>
-<p><img src="http://ozilwgpje.bkt.clouddn.com/blog.jpg" alt="Theme HuWeihuang"></p>
-<h1 id="install-hexo">Install Hexo</h1>
-<p>Install Node.js  and Git</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>For Mac</span><br><span class="line">brew install node</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-<p>Install hexo</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>For more:https://hexo.io/zh-cn/index.html</span><br></pre></td></tr></table></figure>
-<h1 id="theme-usage">Theme Usage</h1>
-<h2 id="init">Init</h2>
-<hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/huweihuang/hexo-theme-huweihuang.git ./hexo-huweihuang</span><br><span class="line"><span class="built_in">cd</span> hexo-huweihuang</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<h2 id="modify">Modify</h2>
-<hr>
-<p>Modify <code>_config.yml</code> file with your own info.<br>
-Especially the section:</p>
-<h3 id="deployment">Deployment</h3>
-<p>Replace to your own repo!</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/&lt;yourAccount&gt;/&lt;repo&gt;</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">&lt;your-branch&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="sidebar-settings">Sidebar settings</h3>
-<p>Copy your avatar image to <code>&lt;root&gt;/img/</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span> <span class="literal">true</span>    <span class="comment"># whether or not using Sidebar.</span></span><br><span class="line"><span class="attr">sidebar-about-description:</span> <span class="string">"&lt;your description&gt;"</span></span><br><span class="line"><span class="attr">sidebar-avatar:</span> <span class="string">img/&lt;your</span> <span class="string">avatar</span> <span class="string">path&gt;</span></span><br></pre></td></tr></table></figure>
-<p>and activate your personal widget you like</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">widgets:</span>         <span class="comment"># here are widget you can use, you can comment out</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">featured-tags</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">short-about</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">recent-posts</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">friends-blog</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">archive</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">category</span></span><br></pre></td></tr></table></figure>
-<p>if you want to add sidebar widget, please add at <code>layout/_widget</code>.</p>
-<h3 id="signature-setup">Signature Setup</h3>
-<p>Copy your signature image to <code>&lt;root&gt;/img/signature</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">signature:</span> <span class="literal">true</span>   <span class="comment"># show signature</span></span><br><span class="line"><span class="attr">signature-img:</span> <span class="string">img/signature/&lt;your-signature-ID&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="go-to-top-icon-setup">Go to top icon Setup</h3>
-<p>My icon is using iron man, you can change to your own icon at <code>css/image</code>.</p>
-<h3 id="post-tag">Post tag</h3>
-<p>You can decide to show post tags or not.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home_posts_tag:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><img src="/img/article/tag.png" alt="home_posts_tag-true"></p>
-<h3 id="markdown-render">Markdown render</h3>
-<p>My markdown render engine plugin is <a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="noopener">hexo-renderer-markdown-it</a>.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line"><span class="attr">  render:</span></span><br><span class="line"><span class="attr">    html:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    breaks:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    linkify:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    typographer:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    quotes:</span> <span class="string">'“”‘’'</span></span><br></pre></td></tr></table></figure>
-<p>and if you want to change the header anchor ‘ℬ’, you can go to <code>layout/post.ejs</code> to change it.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span>(<span class="string">"https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        anchors.options = &#123;</span><br><span class="line">          visible: <span class="string">'hover'</span>,</span><br><span class="line">          placement: <span class="string">'left'</span>,</span><br><span class="line">          icon: ℬ <span class="comment">// this is the header anchor "unicode" icon</span></span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="hexo-basics">Hexo Basics</h2>
-<hr>
-<p>Some hexo command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"&lt;post name&gt;"</span> <span class="comment"># you can change post to another layout if you want</span></span><br><span class="line">hexo clean &amp;&amp; hexo generate <span class="comment"># generate the static file</span></span><br><span class="line">hexo server <span class="comment"># run hexo in local environment</span></span><br><span class="line">hexo deploy <span class="comment"># hexo will push the static files automatically into the specific branch(gh-pages) of your repo!</span></span><br></pre></td></tr></table></figure>
-<h1 id="have-fun-_">Have fun ^_^</h1>
-<hr>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Place this tag where you want the button to render. -->
-<p>Please <a class="github-button" href="https://github.com/huweihuang/hexo-theme-huweihuang" data-icon="octicon-star" aria-label="Star huweihuang/hexo-theme-huweihuang on GitHub" target="_blank" rel="noopener">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/huweihuang" aria-label="Follow @huweihuang on GitHub" target="_blank" rel="noopener">Follow</a> would also be appreciated!<br>
-Peace!</p>
+                <h2 id="官方提供kubernetes部署3种方式">官方提供Kubernetes部署3种方式</h2>
+<ul>
+<li>minikube</li>
+</ul>
+<p>Minikube是一个工具，可以在本地快速运行一个单点的Kubernetes，尝试Kubernetes或日常开发的用户使用。不能用于生产环境。</p>
+<p>官方文档：<a href="https://kubernetes.io/docs/setup/minikube/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/minikube/</a></p>
+<ul>
+<li>kubeadm</li>
+</ul>
+<p>kubeadm可帮助你快速部署一套kubernetes集群。kubeadm设计目的为新用户开始尝试kubernetes提供一种简单的方法。目前是Beta版。</p>
+<p>官方文档：<a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/" target="_blank" rel="noopener">https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/</a><br>
+<a href="https://kubernetes.io/docs/setup/independent/install-kubeadm/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/independent/install-kubeadm/</a></p>
+<ul>
+<li>二进制包</li>
+</ul>
+<p>从官方下载发行版的二进制包，手动部署每个组件，组成Kubernetes集群。目前企业生产环境中主要使用该方式。<br>
+下载地址：<a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#v1113" target="_blank" rel="noopener">https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.11.md#v1113</a></p>
+<h2 id="1-安装要求">1. 安装要求</h2>
+<pre><code>操作系统
+Ubuntu 16.04+
+Debian 9
+CentOS 7
+RHEL 7
+Fedora 25/26 (best-effort)
+其他
+内存2GB + ，2核CPU +
+集群节点之间可以通信
+每个节点唯一主机名，MAC地址和product_uuid
+
+检查MAC地址：使用ip link或者ifconfig -a
+检查product_uuid：cat /sys/class/dmi/id/product_uuid
+禁止swap分区。这样才能使kubelet正常工作
+</code></pre>
+<h2 id="2-准备环境">2. 准备环境</h2>
+<pre><code>关闭防火墙：
+
+    # systemctl stop firewalld
+    # systemctl disable firewalld
+
+关闭selinux：
+
+    # sed -i 's/enforcing/disabled/' /etc/selinux/config 
+    # setenforce 0
+
+关闭swap：
+
+    # swapoff -a  # 临时
+    # vim /etc/fstab  # 永久
+
+添加主机名与IP对应关系：
+
+    # cat /etc/hosts
+    192.168.0.11 k8s-master
+    192.168.0.12 k8s-node1
+    192.168.0.13 k8s-node2
+
+同步时间：
+
+    # yum install ntpdate -y
+    # ntpdate  ntp.api.bz
+</code></pre>
+<h2 id="3-安装docker">3. 安装Docker</h2>
+<pre><code># yum install -y yum-utils device-mapper-persistent-data lvm2 
+
+# yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+# yum install docker-ce-17.03.3.ce -y   #目前kubeadm最大支持docker-ce-17.03，所以要指定该版本安装
+
+# systemctl enable docker &amp;&amp; systemctl start docker
+如果提示container-selinux依赖问题，先安装ce-17.03匹配版本：
+# yum localinstall https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-selinux-17.03.3.ce-1.el7.noarch.rpm
+</code></pre>
+<p><strong>假如docker启动的时候报错：graphdriver: driver not supported</strong>：升级系统内核</p>
+<h2 id="4-安装kubeadmkubelet和kubectl">4. 安装kubeadm，kubelet和kubectl</h2>
+<p>kubeadm： 引导集群的命令</p>
+<p>kubelet：集群中运行任务的代理程序</p>
+<p>kubectl：命令行管理工具</p>
+<p>4.1 添加阿里云YUM软件源</p>
+<pre><code># cat &lt;&lt; EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
+</code></pre>
+<p>4.2 安装kubeadm，kubelet和kubectl</p>
+<pre><code># yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+# systemctl enable kubelet &amp;&amp; systemctl start kubelet
+注意：使用Docker时，kubeadm会自动检查kubelet的cgroup驱动程序，并/var/lib/kubelet/kubeadm-flags.env在运行时将其设置在文件中。如果使用的其他CRI，则必须在/etc/default/kubelet中cgroup-driver值修改为cgroupfs：
+
+# cat /var/lib/kubelet/kubeadm-flags.env
+KUBELET_KUBEADM_ARGS=--cgroup-driver=cgroupfs --cni-bin-dir=/opt/cni/bin --cni-conf-dir=/etc/cni/net.d --network-plugin=cni
+# systemctl daemon-reload
+# systemctl restart kubelet
+</code></pre>
+<h2 id="5-使用kubeadm创建单个master集群">5. 使用kubeadm创建单个Master集群</h2>
+<p>5.1 默认下载镜像地址在国外无法访问，先从准备好所需镜像<br>
+保存到脚本之间运行：</p>
+<pre><code>K8S_VERSION=v1.11.2
+ETCD_VERSION=3.2.18
+DASHBOARD_VERSION=v1.8.3
+FLANNEL_VERSION=v0.10.0-amd64
+DNS_VERSION=1.1.3
+PAUSE_VERSION=3.1
+# 基本组件
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver-amd64:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager-amd64:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler-amd64:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy-amd64:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/etcd-amd64:$ETCD_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/pause:$PAUSE_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:$DNS_VERSION
+# 网络组件
+docker pull quay.io/coreos/flannel:$FLANNEL_VERSION
+# 修改tag
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver-amd64:$K8S_VERSION k8s.gcr.io/kube-apiserver-amd64:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager-amd64:$K8S_VERSION k8s.gcr.io/kube-controller-manager-amd64:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler-amd64:$K8S_VERSION k8s.gcr.io/kube-scheduler-amd64:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy-amd64:$K8S_VERSION k8s.gcr.io/kube-proxy-amd64:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/etcd-amd64:$ETCD_VERSION k8s.gcr.io/etcd-amd64:$ETCD_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:$PAUSE_VERSION k8s.gcr.io/pause:$PAUSE_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:$DNS_VERSION k8s.gcr.io/coredns:$DNS_VERSION
+</code></pre>
+<p>5.2 初始化Master</p>
+<pre><code># kubeadm init --kubernetes-version=1.11.2 --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.0.11
+
+...
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run (as a regular user):
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the addon options listed at:
+  http://kubernetes.io/docs/admin/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join --token &lt;token&gt; &lt;master-ip&gt;:&lt;master-port&gt; --discovery-token-ca-cert-hash sha256:&lt;hash&gt;
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre>
+<p>5.3 安装Pod网络 - 插件</p>
+<pre><code># kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
+</code></pre>
+<p>5.4 加入工作节点<br>
+在Node节点切换到root账号执行：</p>
+<pre><code># kubeadm join 192.168.0.11:6443 --token 6hk68y.0rdz1wdjyh85ntkr --discovery-token-ca-cert-hash sha256:d1d3f59ae37fbd632707cbeb9b095d0d0b19af535078091993c4bc4d9d2a7782
+</code></pre>
+<p>格式：kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash></hash></master-port></master-ip></token></p>
+<h2 id="6-kubernetes-dashboard">6. kubernetes dashboard</h2>
+<p>先将yaml文件下载下来，修改里面镜像地址和Service NodePort类型。</p>
+<pre><code># wget https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+</code></pre>
+<p>修改镜像地址：</p>
+<p><a href="http://registry.cn-hangzhou.aliyuncs.com/google_containers/kubernetes-dashboard-amd64:v1.10.0" target="_blank" rel="noopener">registry.cn-hangzhou.aliyuncs.com/google_containers/kubernetes-dashboard-amd64:v1.10.0</a><br>
+修改Service：</p>
+<pre><code>kind: Service
+apiVersion: v1
+metadata:
+  labels:
+k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kube-system
+spec:
+  type: NodePort
+  ports:
+- port: 443
+  targetPort: 8443
+  nodePort: 30001
+  selector:
+k8s-app: kubernetes-dashboard
+</code></pre>
+<p>kubectl apply -f kubernetes-dashboard.yaml</p>
+<p>创建一个管理员角色：</p>
+<pre><code>apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: dashboard-admin
+  namespace: kube-system
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: dashboard-admin
+subjects:
+  - kind: ServiceAccount
+    name: dashboard-admin
+    namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<p>kubectl apply -f k8s-admin.yaml</p>
+<p>使用上述创建账号的token登录Kubernetes Dashboard：</p>
+<pre><code># kubectl get secret -n kube-system
+# kubectl describe secret dashboard-admin-token-bwdjj  -n kube-system
+...
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkYXNoYm9hcmQtYWRtaW4tdG9rZW4tYndkamoiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGFzaGJvYXJkLWFkbWluIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzIyOTRmNTUtYjc1OC0xMWU4LThkY2UtMDAwYzI5ZGUyNWVhIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRhc2hib2FyZC1hZG1pbiJ9.0hQU5Di_P1OX1DcnW2AYzjDAED66EOrqhF5iupv39wvB8wE-aLRSQyp0twX2M8u1KMZ67n6LxbH17VwEQkMDRVXs7ZlUCyAAD6kHDz3k-f7PAzH5vcuyO4veQ9ooVjk3DKjrP4zXQChHllBB1wmD_oyLjoWxK3Z5MBTlVGzSixVwuQNpFPbuS6Z7iLGwUOgjI0cGZ9Tt6cXzcK81KfAEpDIP_CtFV_Jw4s98EgBex9mZh6vq1dcxr03qfuK--udd_8GWZctu_p_P15hZZLoKEm5GCbs6JGvKL2aao_DEHfLp3XYEnApojI91vU4qAqdkvMZ2qWQNGYv4KNi2yPOOJQ
+</code></pre>
 
                 
 
@@ -270,10 +427,10 @@ Peace!</p>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                    
-                        <li class="next">
-                            <a href="/article/hexo-theme-kubeadm11.2快速搭建/" data-toggle="tooltip" data-placement="top" title="[Hexo] Theme HuWeihuang">Next Post &rarr;</a>
+                        <li class="previous">
+                            <a href="/article/hexo-theme-huweihuang/" data-toggle="tooltip" data-placement="top" title="[Hexo] Theme HuWeihuang">&larr; Previous Post</a>
                         </li>
+                    
                     
                 </ul>
 
@@ -307,7 +464,7 @@ Peace!</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#live-demo"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Live Demo</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#install-hexo"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Install Hexo</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#theme-usage"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Theme Usage</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#init"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Init</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#modify"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Modify</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#deployment"><span class="toc-nav-number">3.2.1.</span> <span class="toc-nav-text">Deployment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#sidebar-settings"><span class="toc-nav-number">3.2.2.</span> <span class="toc-nav-text">Sidebar settings</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#signature-setup"><span class="toc-nav-number">3.2.3.</span> <span class="toc-nav-text">Signature Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#go-to-top-icon-setup"><span class="toc-nav-number">3.2.4.</span> <span class="toc-nav-text">Go to top icon Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#post-tag"><span class="toc-nav-number">3.2.5.</span> <span class="toc-nav-text">Post tag</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#markdown-render"><span class="toc-nav-number">3.2.6.</span> <span class="toc-nav-text">Markdown render</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#hexo-basics"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Hexo Basics</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#have-fun-_"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Have fun ^_^</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#官方提供kubernetes部署3种方式"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5B98;&#x65B9;&#x63D0;&#x4F9B;Kubernetes&#x90E8;&#x7F72;3&#x79CD;&#x65B9;&#x5F0F;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-安装要求"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">1. &#x5B89;&#x88C5;&#x8981;&#x6C42;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-准备环境"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">2. &#x51C6;&#x5907;&#x73AF;&#x5883;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-安装docker"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">3. &#x5B89;&#x88C5;Docker</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-安装kubeadmkubelet和kubectl"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">4. &#x5B89;&#x88C5;kubeadm&#xFF0C;kubelet&#x548C;kubectl</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-使用kubeadm创建单个master集群"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">5. &#x4F7F;&#x7528;kubeadm&#x521B;&#x5EFA;&#x5355;&#x4E2A;Master&#x96C6;&#x7FA4;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-kubernetes-dashboard"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">6. kubernetes dashboard</span></a></li></ol>
         
         </div>
       </aside>
